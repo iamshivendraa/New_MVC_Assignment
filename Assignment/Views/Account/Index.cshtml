@@ -1,0 +1,26 @@
+﻿@model IEnumerable<AccountModel>
+
+<div class="border rounded">
+    <h1 style="text-align:center">Accounts</h1>
+    <table class="table table-striped ">
+        <thead>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Age</th>
+            <th>Salary</th>
+            <th>Department</th>
+        </thead>     
+        @foreach (var obj in Model) {
+        <tbody>
+            <td>@obj.FirstName</td>
+            <td>@obj.LastName</td>
+            <td>@obj.Email</td>
+            <td>@obj.Age</td>
+            <td>@obj.Salary</td>
+            <td>@obj.Department</td>
+        </tbody>
+        }
+        
+    </table>
+</div>

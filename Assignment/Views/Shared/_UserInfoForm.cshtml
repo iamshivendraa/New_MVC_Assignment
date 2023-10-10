@@ -1,0 +1,16 @@
+﻿
+@model List<UserModel>
+<h2 style="color:white">Add User</h2>
+<form asp-controller="User" asp-action="AddUser" method="post" style="color:white">
+    <div class="form-group">
+        <label for="Name">Name:</label>
+        <input type="text" id="Name" name="Name" class="form-control" required>
+    </div>
+    <div class="form-group">
+        <label for="Age">Age:</label>
+        <input type="number" id="Age" name="Age" class="form-control" required>
+    </div>
+    <button type="submit" class="btn btn-primary mt-3">Add User</button>
+
+</form>
+<span style="color:white ; margin-top:10px;">Submit Count :@ViewBag.SubmitCount</span>

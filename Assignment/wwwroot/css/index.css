@@ -1,0 +1,10 @@
+﻿.form{
+    height:400px;
+    width:300px;
+    background-color:black;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    border-radius:10px;
+}
