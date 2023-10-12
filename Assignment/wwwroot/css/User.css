@@ -3,15 +3,6 @@
     align-items: center;
     justify-content: center;
 }
-.userform {
-    background-color: black;
-    height: 400px;
-    width:400px !important;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    border-radius:10px;
-}
 .inputBox{
     color:white;
 }
@@ -35,4 +26,39 @@ thead{
     position:sticky;
 }
 #flip:before{
+}
+
+.Form{
+    display:felx;
+    align-items:center;
+    justify-content:center;
+    
+    width:400px;
+    padding:10px;
+    background-color:black;
+}
+
+.DictionaryContainer{
+    display:flex;   
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+}
+
+.DictionaryContainerForm{
+    background-color:black;
+    padding:10px;
+}
+.DictionaryInnerContainer{
+    background-color:black;
+    padding:10px;
+    color:white;
+    margin-bottom:10px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-direction:column;
+}
+.spanDiv{
+    text-align:center;
 }

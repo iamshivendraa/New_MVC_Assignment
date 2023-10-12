@@ -1,0 +1,23 @@
+﻿@model IEnumerable<UserModelDictionary>
+<div class="btn btn-primary w-100" id="flip">Show Details</div>
+<div class="table_container mt-2" id="panel">
+    <table class="table table-striped w-100">
+        <thead>
+
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+            </tr>
+
+        </thead>
+        <tbody>
+            @foreach (var obj in Model)
+            {
+                <tr>
+                    <td>@obj.Name</td>
+                    <td>@obj.Age</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

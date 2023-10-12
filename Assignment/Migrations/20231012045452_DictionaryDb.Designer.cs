@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace NewProject.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20231005105924_dept")]
-    partial class dept
+    [Migration("20231012045452_DictionaryDb")]
+    partial class DictionaryDb
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -59,7 +59,7 @@ namespace NewProject.Migrations
                     b.ToTable("Accounts");
                 });
 
-            modelBuilder.Entity("NewProject.Models.DepartmentModel", b =>
+            modelBuilder.Entity("Assignment.Models.UserModelDictionary", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -67,17 +67,16 @@ namespace NewProject.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("LongName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("Age")
+                        .HasColumnType("int");
 
-                    b.Property<string>("ShortName")
+                    b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Departments");
+                    b.ToTable("Users");
                 });
 #pragma warning restore 612, 618
         }

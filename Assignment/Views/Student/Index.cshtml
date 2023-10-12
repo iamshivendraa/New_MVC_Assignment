@@ -1,0 +1,70 @@
+﻿@model NewProject.Models.StudentModel
+
+@{
+    ViewData["Title"] = "student";
+}
+<h1>Student List</h1>
+<table class="table table-striped border">
+    <thead class="bg-black text-white">
+        <tr>
+           
+            <th>
+               Name
+            </th>
+            <th>
+                Class
+            </th>
+            <th>
+                City
+            </th>
+            <th>
+                Marks
+            </th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody id="tableBody">
+
+
+    </tbody>
+</table>
+<div class="modal" id="studentModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="modalTitle">Update</h3>
+                <div type="button" class="close" data-bs-dismiss="modal">
+                    <i class="bi bi-x-lg"></i>
+                </div>
+            </div>
+            <div class="modal-body">
+                
+                <input asp-for="Id" hidden />
+                <label asp-for="Name"></label>
+                <input type="text" asp-for="Name" class="form-control"/>
+                <span asp-validation-for="Name" class="text-danger"></span>
+
+                <label asp-for="Class"></label>
+                <input type="number" asp-for="Class" class="form-control" />
+                <span id="error-message"></span>
+
+
+                <label asp-for="City"></label>
+                <input type="text" asp-for="City" class="form-control" />
+                <span asp-validation-for="City" class="text-danger"></span>
+
+                <label asp-for="Marks"></label>
+                <input type="number" asp-for="Marks" class="form-control" />
+                <span asp-validation-for="Marks" class="text-danger"></span>
+
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-success" id="btnAdd" onclick="Update();">Submit</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/js/studentjs.js"></script>
