@@ -4,6 +4,10 @@
     ViewData["Title"] = "student";
 }
 <h1>Student List</h1>
+<hr />
+<div>
+    <button class="btn btn-success mb-3" id="btnAdd">Add Students</button>
+</div>
 <table class="table table-striped border">
     <thead class="bg-black text-white">
         <tr>
@@ -32,35 +36,44 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h3 class="modal-title" id="modalTitle">Update</h3>
-                <div type="button" class="close" data-bs-dismiss="modal">
+                <h3 class="modal-title" id="modalTitle"></h3>
+                <span type="button" class="close" data-bs-dismiss="modal">
                     <i class="bi bi-x-lg"></i>
-                </div>
+                </span>
             </div>
+                <form>
             <div class="modal-body">
-                
+                <div>
                 <input asp-for="Id" hidden />
                 <label asp-for="Name"></label>
-                <input type="text" asp-for="Name" class="form-control"/>
-                <span asp-validation-for="Name" class="text-danger"></span>
-
+                <input type="text" asp-for="Name" class="form-control" id="Name"/>
+                <span id="error-name" style="color:red"></span>
+                </div>
+                <div>
                 <label asp-for="Class"></label>
                 <input type="number" asp-for="Class" class="form-control" />
-                <span id="error-message"></span>
+                    <span id="error-class" style="color:red"></span>
+                </div>
 
-
+                <div>
                 <label asp-for="City"></label>
                 <input type="text" asp-for="City" class="form-control" />
                 <span asp-validation-for="City" class="text-danger"></span>
-
+                    <span id="error-city" style="color:red"></span>
+                </div>
+                
+                <div>
                 <label asp-for="Marks"></label>
                 <input type="number" asp-for="Marks" class="form-control" />
                 <span asp-validation-for="Marks" class="text-danger"></span>
-
+                    <span id="error-marks" style="color:red"></span>
+                </div>
             </div>
             <div class="modal-footer">
-                <button type="submit" class="btn btn-success" id="btnAdd" onclick="Update();">Submit</button>
+                <button type="submit" class="btn btn-success" id="Save" onclick="Insert();">Save</button>
+                <button type="submit" class="btn btn-primary" id="Update" onclick="Update();" style="display:none">Update</button>
             </div>
+            </form>
         </div>
     </div>
 </div>

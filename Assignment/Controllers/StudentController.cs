@@ -22,7 +22,17 @@ namespace NewProject.Controllers
             var students = _context.Students.ToList();
             return Json(students);
         }
-
+        [HttpPost]
+        public JsonResult Insert(StudentModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.Students.Add(model);
+                _context.SaveChanges();
+                return Json("Student record added successfully!");
+            }
+            return Json("Model Validation Failed!");
+        }
         [HttpGet]
         public JsonResult Edit(int id)
         {
