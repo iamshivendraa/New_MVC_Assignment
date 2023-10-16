@@ -50,5 +50,19 @@ namespace NewProject.Controllers
             }
             return Json("Model validation failed");
         }
+
+        [HttpPost]
+
+        public JsonResult Delete(int id)
+        {
+            var student = _context.Students.Find(id);
+            if(student != null)
+            {
+                _context.Students.Remove(student);
+                _context.SaveChanges();
+                return Json("Student record deleted successfully");
+            }
+            return Json("Unable to delete the record!");                         
+        }
     }
 }

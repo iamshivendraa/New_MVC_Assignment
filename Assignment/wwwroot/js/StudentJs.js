@@ -25,7 +25,7 @@ function GetStudents() {
                     object += '<td>' + obj.class + '</td >';
                     object += '<td>' + obj.city+ '</td >';
                     object += '<td>' + obj.marks+ '</td >';
-                    object += '<td> <a href="#" class="btn btn-primary btn-sm" onclick = "Edit(' + obj.id + ')">Edit</a></td>';
+                    object += '<td> <a href="#" class="btn btn-primary btn-sm" onclick = "Edit(' + obj.id + ')">Edit</a> <a href="#" class="btn btn-danger btn-sm" onclick = "Delete(' + obj.id + ')">Delete</a></td>';
                     object += '</tr>';
 
                 });
@@ -229,3 +229,25 @@ function Update() {
     });
 }
 
+function Delete(id) {
+    if (confirm("Are you sure to delete this record?")) {
+        $.ajax({
+            url: '/Student/Delete?id=' + id,
+            type: 'post',
+            success: function (response) {
+                if (response == null || response == undefined) {
+                    alert('Unable to delete the data.')
+                }
+                else {
+                    location.reload();
+                    GetProducts();
+                    alert(response);
+                }
+            },
+            error: function () {
+                alert('Unable to read the data.');
+            }
+        });
+
+    }
+}
