@@ -1,0 +1,60 @@
+﻿@model IEnumerable<NewProject.Models.EmployeeViewModel>
+
+@{
+    ViewData["Title"] = "EmployeeDetails";
+}
+
+<h1>EmployeeDetails</h1>
+
+<table class="table table-striped border">
+    <thead class="bg-dark text-white">
+        <tr>
+            <th>
+                Name
+            </th>
+            <th>
+                Age
+            </th>
+            <th>
+                City
+            </th>          
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @item.Name
+            </td>
+            <td>
+                @item.Age
+            <td>
+                        @if (item.CityId == 1)
+                        {
+                            <span>Noida</span>
+                        }
+                        @if (item.CityId == 2)
+                        {
+                            <span>Ghaziabad</span>
+                        }
+                        @if (item.CityId == 3)
+                        {
+                            <span>Meerut</span>
+                        }
+                        @if (item.CityId == 4)
+                        {
+                            <span>Agra</span>
+                        }
+                        @if (item.CityId == 5)
+                        {
+                            <span>Mathura</span>
+                        }
+
+
+        </tr>
+}
+    </tbody>
+</table>
+<p>
+    @Html.ActionLink("Go Back", "Index", "Employee");
+</p>

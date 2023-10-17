@@ -1,0 +1,34 @@
+﻿@model NewProject.Models.EmployeeViewModel
+<a class="btn btn-primary text-decoration-none mb-2" asp-controller="Employee" asp-action="EmployeeDetails">
+    Employee List
+</a>
+
+<div class="card bg-black text-white">
+    
+        <div class="card-body">
+        <h5 class="card-title">Add Employee</h5>
+       
+            <form method="post" asp-controller="Employee" asp-action="EmployeeDetails" >
+                <div>
+                <label asp-for="Name">Name</label>
+                <input asp-for="Name" type="text" placeholder="Enter your name" class="form-control" />
+            </div>
+            <div>
+                <label asp-for="Age"></label>
+                <input asp-for="Age" type="number" class="form-control" />
+
+
+            </div>
+
+            <div>
+                <label>City</label>
+                @Html.DropDownListFor(model => model.CityId, new SelectList(Model.EmployeeCity(), "Id", "Name"), "Select your city", new { @class = "form-control" })
+            </div>
+            <div>
+                <input type="submit" value="Submit" class="btn btn-primary mt-2" />
+
+            </div>
+        </form>
+                
+    </div>
+</div>

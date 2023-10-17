@@ -18,7 +18,8 @@ namespace Assignment.Data
 
         public DbSet<UserModelDictionary> Users { get; set; }
         public DbSet<StudentModel> Students { get; set; }
-        public DbSet<NewProject.Models.CityModel> CityModel { get; set; } = default!;
+        
+        public DbSet<EmployeeViewModel> Employees { get; set; }
 
 
     }
