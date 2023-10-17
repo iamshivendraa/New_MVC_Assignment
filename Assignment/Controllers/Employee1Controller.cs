@@ -1,5 +1,7 @@
 ﻿using Assignment.Data;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
+using NewProject.Models;
 
 namespace NewProject.Controllers
 {
@@ -13,8 +15,20 @@ namespace NewProject.Controllers
         }
         public IActionResult Index()
         {
+            var empDetails =new EmployeeViewModel();
+            return View(empDetails);
+        }
+
+        public JsonResult GetName()
+        {
             var empList = _context.Employees.ToList();
-            return View(empList);
+            return Json(empList);
+        }
+
+        [HttpGet]
+        public JsonResult ModalDetails(int id) {
+            var modalDetails = _context.Employees.Find(id);
+            return Json(modalDetails);
         }
     }
 }

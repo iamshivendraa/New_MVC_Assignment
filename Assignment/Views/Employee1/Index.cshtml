@@ -1,4 +1,4 @@
-﻿@model IEnumerable<NewProject.Models.EmployeeViewModel>
+﻿@model NewProject.Models.EmployeeViewModel
 
 @{
     ViewData["Title"] = "Index";
@@ -9,36 +9,53 @@
 <p>
     <button class="btn btn-primary">Add Employee</button>
 </p>
-<div style="height:70vh;" class="overflow-scroll">
-<table class="table table-striped border">
-    <thead class="bg-black text-white">
-        <tr>
+<div style="height:70vh; " class="overflow-scroll w-50">
+<table class="table table-striped border ">
+        <thead class="bg-black text-white">
+            <tr >
             <th>
-                @Html.DisplayNameFor(model => model.Name)
+                Name
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Age)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CityId)
-            </th>
-           
-        </tr>
     </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Age)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CityId)
-            </td>
-        </tr>
-}
+
+    <tbody id="tableBody"> 
+
     </tbody>
 </table>
 </div>
+
+
+<div class="modal" id="EmployeeModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="modalTitle"></h3>
+                <span type="button" class="close" data-bs-dismiss="modal">
+                    <i class="bi bi-x-lg"></i>
+                </span>
+            </div>
+            
+                <div class="modal-body">
+                 
+                    <div id="Name">
+
+                    </div>
+                    <div id="Age">
+                        
+                    </div>
+                    <div id="CityId">
+                    </div>
+                    
+            </div>
+            
+            <div class="modal-footer">
+                <button class="btn btn-secondary close" data-bs-dismiss="modal">Close</button>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/js/employeejs.js"></script>
