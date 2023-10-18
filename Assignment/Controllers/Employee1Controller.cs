@@ -26,9 +26,12 @@ namespace NewProject.Controllers
         }
 
         [HttpGet]
-        public JsonResult ModalDetails(int id) {
+        public JsonResult ModalDetails(int id)
+        {
             var modalDetails = _context.Employees.Find(id);
             return Json(modalDetails);
         }
+
+
     }
 }

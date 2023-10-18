@@ -1,0 +1,43 @@
+﻿@model NewProject.Models.EmployeeViewModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <hr />
+    <div class="row">
+        <p>
+            <b>Name : </b>  @Model.Name
+        </p>
+        <p>
+            <b>Age : </b>  @Model.Age
+        </p>
+        <p class = "col-sm-10">
+            <b>City : </b>@if (Model.Id == 1)
+            {
+                <span>Noida</span>
+            }
+            @if (Model.Id == 2)
+            {
+                <span>Ghaziabad</span>
+            }
+            @if (Model.Id == 3)
+            {
+                <span>Meerut</span>
+            }
+            @if (Model.Id == 4)
+            {
+                <span>Agra</span>
+            }
+            @if (Model.Id == 5)
+            {
+                <span>Mathura</span>
+            }
+    </div>
+</div>
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>

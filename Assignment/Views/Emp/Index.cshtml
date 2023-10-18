@@ -1,0 +1,26 @@
+﻿@model IEnumerable<NewProject.Models.EmployeeViewModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<h1>Employee List</h1>
+<div style="height:70vh;" class="overflow-scroll">
+<table class="table table-striped border">
+    <thead class="bg-black text-white">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                    <a asp-action="Details" asp-controller="Emp" asp-route-id="@item?.Id">@item.Name</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+</div>
